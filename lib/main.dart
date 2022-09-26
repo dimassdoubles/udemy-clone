@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:udemy_clone/core/constants/routes.dart' as route;
+import 'injections.dart' as injections;
 
-void main() {
+void main() async {
+  await injections.setup();
+
   runApp(const MyApp());
 }
 

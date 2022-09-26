@@ -1,15 +1,17 @@
 // routes name
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/presentation/pages/learning_page.dart';
+import 'package:udemy_clone/presentation/pages/home/learning_page.dart';
+import 'package:udemy_clone/presentation/pages/home/main_page.dart';
 import 'package:udemy_clone/presentation/pages/login_page.dart';
-import 'package:udemy_clone/presentation/pages/search_page.dart';
+import 'package:udemy_clone/presentation/pages/home/search_page.dart';
 import 'package:udemy_clone/presentation/pages/splash_page.dart';
-import 'package:udemy_clone/presentation/pages/wishlist_page.dart';
+import 'package:udemy_clone/presentation/pages/home/wishlist_page.dart';
 
-import '../../presentation/pages/account_page.dart';
-import '../../presentation/pages/home_page.dart';
+import '../../presentation/pages/home/account_page.dart';
+import '../../presentation/pages/home/home_page.dart';
 import '../../presentation/pages/signin_page.dart';
 
+const String mainPage = "main";
 const String splashPage = "splash";
 const String loginPage = "login";
 const String signinPage = "signin";
@@ -36,7 +38,7 @@ Route<dynamic> controller(RouteSettings settings) {
       );
     case homePage:
       return MaterialPageRoute(
-        builder: (context) => const HomePage(),
+        builder: (context) => MainPage(),
       );
     case searchPage:
       return MaterialPageRoute(

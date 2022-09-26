@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, route.homePage);
+                    Navigator.pushReplacementNamed(context, route.homePage);
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(

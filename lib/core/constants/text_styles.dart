@@ -7,15 +7,28 @@ FontWeight regular = FontWeight.w400;
 FontWeight medium = FontWeight.w500;
 FontWeight semiBold = FontWeight.w600;
 FontWeight bold = FontWeight.w700;
+FontWeight black = FontWeight.w900;
 
 TextStyle whiteTextStyle = GoogleFonts.poppins(
   color: Colors.white,
 );
 
-TextStyle loginTitle = GoogleFonts.lora(
+TextStyle greyTextStyle = GoogleFonts.poppins(
+  color: signinHomeColor,
+);
+
+TextStyle loginTitle = GoogleFonts.dmSerifDisplay(
   color: secondaryColor,
 );
 
 TextStyle loginBody = GoogleFonts.poppins(
   color: secondaryColor,
+);
+
+TextStyle ratingNumberText = GoogleFonts.poppins(
+  color: ratingNumberColor,
+);
+
+TextStyle reviewText = GoogleFonts.poppins(
+  color: reviewColor,
 );
