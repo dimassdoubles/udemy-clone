@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:udemy_clone/core/constants/colors.dart';
-import 'package:udemy_clone/core/constants/text_styles.dart';
+import 'package:udemy_clone/core/dummies/courses.dart';
+import '../../../core/constants/text_styles.dart';
+import '../../widgets/home/category_item.dart';
+import '../../widgets/home/featured_item.dart';
+import '../../widgets/home/see_all_button.dart';
+import '../../widgets/home/top_courses_item.dart';
+import '../../widgets/home/udemy_bussiness.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -42,6 +46,8 @@ class HomePage extends StatelessWidget {
         const SizedBox(
           height: 24,
         ),
+
+        // Featured Section
         Padding(
           padding: const EdgeInsets.only(left: 16),
           child: Text(
@@ -55,15 +61,83 @@ class HomePage extends StatelessWidget {
         const SizedBox(
           height: 8,
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: const [
-              FeaturedItem(),
-              FeaturedItem(),
-            ],
-          ),
+        const FeaturedList(),
+        const SizedBox(
+          height: 48,
         ),
+
+        // Category Section
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: Text(
+                'Categories',
+                style: loginBody.copyWith(
+                  fontSize: 24,
+                  fontWeight: bold,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 16),
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  'See all',
+                  style: seeAllText.copyWith(
+                    fontWeight: bold,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        const CategoryList(),
+        const SizedBox(
+          height: 48,
+        ),
+
+        // Section Top Course
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: Text(
+                'Top courses in',
+                style: loginBody.copyWith(
+                  fontSize: 24,
+                  fontWeight: bold,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Design',
+                style: topCourseCategoryText.copyWith(
+                  fontSize: 24,
+                  fontWeight: bold,
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        const TopCourseList(),
+        const SizedBox(
+          height: 48,
+        ),
+
+        // Top Companies Section
+        const UdemyBussiness(),
         const SizedBox(
           height: 48,
         ),
@@ -72,138 +146,97 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class FeaturedItem extends StatelessWidget {
-  const FeaturedItem({
+class TopCourseList extends StatelessWidget {
+  const TopCourseList({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(
-        left: 16,
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          TopCoursesItem(
+            course: courses[2],
+          ),
+          TopCoursesItem(
+            course: courses[1],
+          ),
+          TopCoursesItem(
+            course: courses[0],
+          ),
+          const SeeAllButton(),
+        ],
       ),
-      width: MediaQuery.of(context).size.width * 2 / 3 - 32,
-      child: AspectRatio(
-        aspectRatio: 2 / 3,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    );
+  }
+}
+
+class CategoryList extends StatelessWidget {
+  const CategoryList({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Padding(
+        padding: const EdgeInsets.only(right: 16),
+        child: Row(
           children: [
-            Expanded(
-              child: AspectRatio(
-                aspectRatio: 16 / 9,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(
-                      10,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Text(
-              'The Perfect Golf Swing - TimeLess Golf Instruction',
-              maxLines: 2,
-              style: loginBody.copyWith(
-                fontSize: 16,
-                fontWeight: bold,
-              ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Text(
-              'Jim McLellan',
-              style: greyTextStyle.copyWith(
-                fontSize: 12,
-              ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Row(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '4.6',
-                  style: ratingNumberText.copyWith(
-                    fontSize: 12,
-                    fontWeight: bold,
-                  ),
+                Row(
+                  children: const [
+                    CategoryItem(title: 'Development'),
+                    CategoryItem(title: 'IT & Software'),
+                    CategoryItem(title: 'Office Productivity'),
+                    CategoryItem(title: 'Design'),
+                    CategoryItem(title: 'LifeStyle'),
+                  ],
                 ),
                 const SizedBox(
-                  width: 4,
+                  height: 8,
                 ),
-                RatingBar(
-                  itemSize: 14,
-                  initialRating: 4,
-                  ratingWidget: RatingWidget(
-                    empty: Icon(
-                      Icons.star_border_outlined,
-                      color: ratingStarColor,
-                    ),
-                    half: Icon(
-                      Icons.star,
-                      color: ratingStarColor,
-                    ),
-                    full: Icon(
-                      Icons.star,
-                      color: ratingStarColor,
-                    ),
-                  ),
-                  onRatingUpdate: (value) {},
-                ),
-                const SizedBox(
-                  width: 4,
-                ),
-                Text(
-                  '(749)',
-                  style: reviewText.copyWith(
-                    fontSize: 12,
-                    fontWeight: medium,
-                  ),
+                Row(
+                  children: const [
+                    CategoryItem(title: 'Business'),
+                    CategoryItem(title: 'Finance & Accounting'),
+                    CategoryItem(title: 'Personal Development'),
+                    CategoryItem(title: 'Marketing'),
+                  ],
                 ),
               ],
             ),
-            const SizedBox(
-              height: 8,
-            ),
-            Text(
-              'Web Exclusive',
-              style: loginBody.copyWith(
-                fontSize: 16,
-                fontWeight: bold,
-              ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: labelBestSelleColor,
-                borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(5),
-                  bottomRight: Radius.circular(5),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(
-                  6,
-                ),
-                child: Text(
-                  'Bestseller',
-                  style: loginBody.copyWith(fontWeight: bold),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class FeaturedList extends StatelessWidget {
+  const FeaturedList({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          FeaturedItem(
+            course: courses[0],
+          ),
+          FeaturedItem(
+            course: courses[1],
+          ),
+          const SeeAllButton(),
+        ],
       ),
     );
   }

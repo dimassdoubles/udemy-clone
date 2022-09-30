@@ -7,8 +7,8 @@ import 'package:udemy_clone/presentation/pages/home/search_page.dart';
 import 'package:udemy_clone/presentation/pages/splash_page.dart';
 import 'package:udemy_clone/presentation/pages/home/wishlist_page.dart';
 
+import '../../presentation/pages/course_detail_page.dart';
 import '../../presentation/pages/home/account_page.dart';
-import '../../presentation/pages/home/home_page.dart';
 import '../../presentation/pages/signin_page.dart';
 
 const String mainPage = "main";
@@ -20,10 +20,15 @@ const String searchPage = "search";
 const String learningPage = "learning";
 const String wishlistPage = "wishlist";
 const String accountPage = "account";
+const String courseDetailPage = "course";
 
 // controll our page flow
 Route<dynamic> controller(RouteSettings settings) {
   switch (settings.name) {
+    case courseDetailPage:
+      return MaterialPageRoute(
+        builder: (context) => const CourseDetailPage(),
+      );
     case splashPage:
       return MaterialPageRoute(
         builder: (context) => const SplashPage(),

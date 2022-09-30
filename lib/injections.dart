@@ -1,5 +1,5 @@
 import 'package:get_it/get_it.dart';
-import 'package:udemy_clone/presentation/cubits/page_cubit.dart';
+import 'presentation/cubits/page_cubit.dart';
 
 GetIt getIt = GetIt.instance;
 

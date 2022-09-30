@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:udemy_clone/core/constants/colors.dart';
-import 'package:udemy_clone/core/constants/text_styles.dart';
-import 'package:udemy_clone/presentation/pages/home/account_page.dart';
-import 'package:udemy_clone/presentation/pages/home/home_page.dart';
-import 'package:udemy_clone/injections.dart';
-import 'package:udemy_clone/presentation/pages/home/learning_page.dart';
-import 'package:udemy_clone/presentation/pages/home/search_page.dart';
-import 'package:udemy_clone/presentation/pages/home/wishlist_page.dart';
+import '../../../core/constants/colors.dart';
+import '../../../core/constants/text_styles.dart';
+import 'account_page.dart';
+import 'home_page.dart';
+import '../../../injections.dart';
+import 'learning_page.dart';
+import 'search_page.dart';
+import 'wishlist_page.dart';
 import 'app_bars/app_bars.dart';
 
 import '../../cubits/page_cubit.dart';
@@ -20,6 +20,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(56),
         child: BlocBuilder(

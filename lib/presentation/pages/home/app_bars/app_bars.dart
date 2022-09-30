@@ -15,9 +15,7 @@ AppBar homeAppBar = AppBar(
   elevation: 0,
   actions: [
     TextButton(
-      onPressed: () {
-        print("Hello World!");
-      },
+      onPressed: () {},
       child: Text(
         'SIGN IN',
         style: greyTextStyle.copyWith(fontWeight: semiBold),
@@ -28,20 +26,20 @@ AppBar homeAppBar = AppBar(
 
 AppBar searchAppBar = AppBar(
   centerTitle: true,
-  title: Text('Search App Bar'),
+  title: const Text('Search App Bar'),
 );
 
 AppBar learningAppBar = AppBar(
   centerTitle: true,
-  title: Text('Learning App Bar'),
+  title: const Text('Learning App Bar'),
 );
 
 AppBar wishlistAppBar = AppBar(
   centerTitle: true,
-  title: Text('Wishlist App Bar'),
+  title: const Text('Wishlist App Bar'),
 );
 
 AppBar accountAppBar = AppBar(
   centerTitle: true,
-  title: Text('Account App Bar'),
+  title: const Text('Account App Bar'),
 );

@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/core/constants/colors.dart';
-import 'package:udemy_clone/core/constants/routes.dart' as route;
+import '../../core/constants/colors.dart';
+import '../../core/constants/routes.dart' as route;
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});

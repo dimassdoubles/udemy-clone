@@ -1,0 +1,31 @@
+{
+    "courses": [
+        {
+            "title": "Programming",
+            "owner": "owner 1",
+            "rating": 4.5,
+            "reviews_count": 1000,
+            "only_web": true,
+            "tag": ["bestseller", "other tag"],
+            "cover_url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        },
+        {
+            "title": "Communication",
+            "owner": "owner 1",
+            "rating": 4.5,
+            "reviews_count": 1000,
+            "only_web": true,
+            "tag": ["bestseller", "other tag"],
+            "cover_url": "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        },
+        {
+            "title": "Cooking",
+            "owner": "owner 1",
+            "rating": 4.5,
+            "reviews_count": 1000,
+            "only_web": true,
+            "tag": ["bestseller", "other tag"],
+            "cover_url": "https://images.unsplash.com/photo-1513135065346-a098a63a71ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
+        }
+    ]
+}

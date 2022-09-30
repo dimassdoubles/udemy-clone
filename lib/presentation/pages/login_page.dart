@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:page_view_indicators/circle_page_indicator.dart';
-import 'package:udemy_clone/core/constants/colors.dart';
-import 'package:udemy_clone/core/constants/routes.dart' as route;
-import 'package:udemy_clone/core/constants/text_styles.dart';
+import '../../core/constants/colors.dart';
+import '../../core/constants/routes.dart' as route;
+import '../../core/constants/text_styles.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

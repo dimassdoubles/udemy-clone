@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/core/constants/routes.dart' as route;
+import 'core/constants/routes.dart' as route;
 import 'injections.dart' as injections;
 
 void main() async {
