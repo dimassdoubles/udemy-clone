@@ -1,5 +1,7 @@
+import 'package:udemy_clone/domain/entities/lecture.dart';
+
 class Section {
   String title;
-  List<String> modules;
-  Section({required this.title, required this.modules});
+  List<Lecture> lectures;
+  Section({required this.title, required this.lectures});
 }

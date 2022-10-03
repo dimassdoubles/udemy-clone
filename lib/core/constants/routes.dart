@@ -4,6 +4,7 @@ import 'package:udemy_clone/presentation/pages/home/learning_page.dart';
 import 'package:udemy_clone/presentation/pages/home/main_page.dart';
 import 'package:udemy_clone/presentation/pages/login_page.dart';
 import 'package:udemy_clone/presentation/pages/home/search_page.dart';
+import 'package:udemy_clone/presentation/pages/player_page.dart';
 import 'package:udemy_clone/presentation/pages/splash_page.dart';
 import 'package:udemy_clone/presentation/pages/home/wishlist_page.dart';
 
@@ -21,10 +22,15 @@ const String learningPage = "learning";
 const String wishlistPage = "wishlist";
 const String accountPage = "account";
 const String courseDetailPage = "course";
+const String playerPage = "player";
 
 // controll our page flow
 Route<dynamic> controller(RouteSettings settings) {
   switch (settings.name) {
+    case playerPage:
+      return MaterialPageRoute(
+        builder: (context) => const PlayerPage(),
+      );
     case courseDetailPage:
       return MaterialPageRoute(
         builder: (context) => const CourseDetailPage(),

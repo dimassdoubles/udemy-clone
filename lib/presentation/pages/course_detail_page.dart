@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:readmore/readmore.dart';
 import 'package:udemy_clone/core/constants/colors.dart';
+import 'package:udemy_clone/core/constants/routes.dart';
 import 'package:udemy_clone/core/dummies/courses.dart';
 import 'package:udemy_clone/core/dummies/sections.dart';
 import 'package:udemy_clone/domain/entities/course.dart';
@@ -557,18 +558,21 @@ class CourseDetailPage extends StatelessWidget {
               "Section ${parentIndex + 1} - ${sections[parentIndex].title}"),
           trailing: const Icon(Icons.add_rounded),
           children: sections[parentIndex]
-              .modules
+              .lectures
               .asMap()
               .entries
               .map(
-                (e) => ListTile(
-                  leading: Text(
-                    (e.key + 1).toString(),
+                (e) => InkWell(
+                  onTap: () => Navigator.pushNamed(context, playerPage),
+                  child: ListTile(
+                    leading: Text(
+                      (e.key + 1).toString(),
+                    ),
+                    title: Text(
+                      "${parentIndex + 1}.${e.key + 1} ${e.value.title}",
+                    ),
+                    subtitle: Text('Video - 16:25 mins'),
                   ),
-                  title: Text(
-                    "${parentIndex + 1}.${e.key + 1} ${e.value}",
-                  ),
-                  subtitle: Text('Video - 16:25 mins'),
                 ),
               )
               .toList(),

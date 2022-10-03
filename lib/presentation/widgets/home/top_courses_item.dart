@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:udemy_clone/core/constants/routes.dart';
-import 'package:udemy_clone/core/dummies/courses.dart';
 import 'package:udemy_clone/presentation/widgets/home/rating_stars.dart';
 
-import '../../../core/constants/colors.dart';
 import '../../../core/constants/text_styles.dart';
 import '../../../domain/entities/course.dart';
 import 'best_seller_label.dart';
