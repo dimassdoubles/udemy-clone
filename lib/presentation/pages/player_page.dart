@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:udemy_clone/core/constants/colors.dart';
+import 'package:udemy_clone/core/constants/text_styles.dart';
 import 'package:udemy_clone/core/dummies/sections.dart';
 import 'package:udemy_clone/injections.dart';
+import 'package:udemy_clone/presentation/cubits/lecture_selected_index_cubit.dart';
 import 'package:udemy_clone/presentation/cubits/lecture_selected_video_cubit.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -15,6 +17,7 @@ class PlayerPage extends StatefulWidget {
 
 class _PlayerPageState extends State<PlayerPage> {
   LectureSelectedVideoCubit videoCubit = getIt<LectureSelectedVideoCubit>();
+  LectureSelectedIndexCubit indexCubit = getIt<LectureSelectedIndexCubit>();
 
   @override
   Widget build(BuildContext context) {
@@ -56,18 +59,28 @@ class _PlayerPageState extends State<PlayerPage> {
           const SizedBox(
             height: 16,
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Text('Flutter Bloc State Management'),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              'Flutter Bloc State Management',
+              style: courseTitlePlayerStyle.copyWith(
+                fontSize: 18,
+              ),
+            ),
           ),
           const SizedBox(
             height: 8,
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(
+          Padding(
+            padding: const EdgeInsets.symmetric(
               horizontal: 16,
             ),
-            child: Text('Khuldi Project'),
+            child: Text(
+              'Khuldi Project',
+              style: creatorStyle.copyWith(
+                fontSize: 14,
+              ),
+            ),
           ),
           const SizedBox(
             height: 16,
@@ -80,16 +93,24 @@ class _PlayerPageState extends State<PlayerPage> {
                 children: [
                   TabBar(
                     labelColor: secondaryColor,
+                    indicatorColor: secondaryColor,
+                    indicatorWeight: 1,
                     isScrollable: true,
                     labelStyle: const TextStyle(
                       fontSize: 16,
                     ),
                     tabs: const [
-                      Text(
-                        'Lectures',
+                      Padding(
+                        padding: EdgeInsets.all(4),
+                        child: Text(
+                          'Lectures',
+                        ),
                       ),
-                      Text(
-                        'More',
+                      Padding(
+                        padding: EdgeInsets.all(4),
+                        child: Text(
+                          'More',
+                        ),
                       ),
                     ],
                   ),
@@ -101,22 +122,59 @@ class _PlayerPageState extends State<PlayerPage> {
                           itemBuilder: (context, parentIndex) => Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(sections[parentIndex].title),
-                              ListView.builder(
-                                shrinkWrap: true,
-                                physics: const ClampingScrollPhysics(),
-                                itemCount:
-                                    sections[parentIndex].lectures.length,
-                                itemBuilder: (context, childIndex) => ListTile(
-                                  onTap: () {
-                                    videoCubit.setVideo(sections[parentIndex]
-                                        .lectures[childIndex]
-                                        .videoLink);
-                                  },
-                                  title: Text(
-                                    sections[parentIndex]
-                                        .lectures[childIndex]
-                                        .title,
+                              Padding(
+                                padding: const EdgeInsets.all(12),
+                                child: Text(
+                                  "Section ${parentIndex + 1} - ${sections[parentIndex].title}",
+                                  style: sectionTitleStyle.copyWith(
+                                    fontWeight: black,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                              BlocBuilder(
+                                bloc: indexCubit,
+                                builder: (context, state) => ListView.builder(
+                                  shrinkWrap: true,
+                                  physics: const ClampingScrollPhysics(),
+                                  itemCount:
+                                      sections[parentIndex].lectures.length,
+                                  itemBuilder: (context, childIndex) =>
+                                      ListTile(
+                                    leading: Text(
+                                      "${childIndex + 1}",
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    selectedTileColor: selectedLectureColor,
+                                    selected: (parentIndex ==
+                                                indexCubit.state[0] &&
+                                            childIndex == indexCubit.state[1])
+                                        ? true
+                                        : false,
+                                    onTap: () {
+                                      videoCubit.setVideo(sections[parentIndex]
+                                          .lectures[childIndex]
+                                          .videoLink);
+                                      indexCubit.setSelectedIndex(
+                                          sectionIndex: parentIndex,
+                                          lectureIndex: childIndex);
+                                    },
+                                    selectedColor: primaryColor,
+                                    title: Text(
+                                      sections[parentIndex]
+                                          .lectures[childIndex]
+                                          .title,
+                                      style: lectureTitleStyle.copyWith(
+                                        fontWeight: (parentIndex ==
+                                                    indexCubit.state[0] &&
+                                                childIndex ==
+                                                    indexCubit.state[1])
+                                            ? bold
+                                            : regular,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    subtitle: Text('Video - 14.01 mins'),
                                   ),
                                 ),
                               ),

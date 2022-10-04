@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 Color primaryColor = const Color.fromARGB(255, 71, 43, 155);
 Color secondaryColor = const Color.fromARGB(255, 28, 29, 31);
+Color greyColor = const Color.fromARGB(255, 187, 189, 188);
 
 Color unselectedCirclePageIndicator = const Color.fromARGB(255, 187, 189, 188);
 
@@ -22,3 +23,5 @@ Color courseDescriptionColor = const Color.fromARGB(255, 187, 189, 188);
 
 Color backgroundProgressBarColor = Color.fromARGB(255, 239, 244, 251);
 Color progressColor = const Color.fromARGB(255, 208, 215, 222);
+
+Color selectedLectureColor = Color.fromARGB(255, 243, 240, 249);

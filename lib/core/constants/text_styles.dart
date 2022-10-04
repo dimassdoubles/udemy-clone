@@ -82,3 +82,19 @@ TextStyle feedbackTitleText = GoogleFonts.poppins(
 TextStyle playerCourseTitle = GoogleFonts.poppins(
   color: secondaryColor,
 );
+
+TextStyle lectureTitleStyle = GoogleFonts.poppins(
+  color: secondaryColor,
+);
+
+TextStyle sectionTitleStyle = GoogleFonts.poppins(
+  color: secondaryColor,
+);
+
+TextStyle courseTitlePlayerStyle = GoogleFonts.poppins(
+  color: secondaryColor,
+);
+
+TextStyle creatorStyle = GoogleFonts.poppins(
+  color: greyColor,
+);
