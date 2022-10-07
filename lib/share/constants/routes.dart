@@ -11,22 +11,28 @@ import 'package:udemy_clone/presentation/pages/home/wishlist_page.dart';
 import '../../presentation/pages/course_detail_page.dart';
 import '../../presentation/pages/home/account_page.dart';
 import '../../presentation/pages/signin_page.dart';
+import '../../theme_test.dart';
 
 const String mainPage = "main";
 const String splashPage = "splash";
 const String loginPage = "login";
 const String signinPage = "signin";
-const String homePage = "home";
+const String featuredPage = "home";
 const String searchPage = "search";
 const String learningPage = "learning";
 const String wishlistPage = "wishlist";
 const String accountPage = "account";
 const String courseDetailPage = "course";
 const String playerPage = "player";
+const String themeTest = "themeTest";
 
 // controll our page flow
 Route<dynamic> controller(RouteSettings settings) {
   switch (settings.name) {
+    case themeTest:
+      return MaterialPageRoute(
+        builder: (context) => const ThemeTestPage(),
+      );
     case playerPage:
       return MaterialPageRoute(
         builder: (context) => const PlayerPage(),
@@ -47,7 +53,7 @@ Route<dynamic> controller(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const SigninPage(),
       );
-    case homePage:
+    case featuredPage:
       return MaterialPageRoute(
         builder: (context) => MainPage(),
       );

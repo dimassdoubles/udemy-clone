@@ -2,15 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:readmore/readmore.dart';
-import 'package:udemy_clone/core/constants/colors.dart';
-import 'package:udemy_clone/core/constants/routes.dart';
-import 'package:udemy_clone/core/dummies/courses.dart';
-import 'package:udemy_clone/core/dummies/sections.dart';
+import 'package:udemy_clone/share/constants/colors.dart';
+import 'package:udemy_clone/share/constants/routes.dart';
+import 'package:udemy_clone/share/dummies/courses.dart';
+import 'package:udemy_clone/share/dummies/sections.dart';
 import 'package:udemy_clone/domain/entities/course.dart';
-import 'package:udemy_clone/presentation/widgets/home/best_seller_label.dart';
-import 'package:udemy_clone/presentation/widgets/home/rating_stars.dart';
-
-import '../../core/constants/text_styles.dart';
+import '../../share/constants/text_styles.dart';
+import '../../share/styles/themes.dart';
+import '../widgets/best_seller_label.dart';
+import '../widgets/rating_stars.dart';
 
 class CourseDetailPage extends StatelessWidget {
   const CourseDetailPage({super.key});
@@ -20,16 +20,12 @@ class CourseDetailPage extends StatelessWidget {
     Course course = courses[0];
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        foregroundColor: appBarItemColor,
-        backgroundColor: Colors.white,
-        elevation: 0,
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.share),
-              color: appBarItemColor),
+            onPressed: () {},
+            icon: const Icon(Icons.share),
+          ),
         ],
       ),
       body: Padding(
@@ -571,7 +567,7 @@ class CourseDetailPage extends StatelessWidget {
                     title: Text(
                       "${parentIndex + 1}.${e.key + 1} ${e.value.title}",
                     ),
-                    subtitle: Text('Video - 16:25 mins'),
+                    subtitle: const Text('Video - 16:25 mins'),
                   ),
                 ),
               )

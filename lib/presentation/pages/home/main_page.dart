@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/constants/colors.dart';
-import '../../../core/constants/text_styles.dart';
+import '../../../share/constants/colors.dart';
+import '../../../share/styles/themes.dart';
 import 'account_page.dart';
-import 'home_page.dart';
+import 'featured_page.dart';
 import '../../../injections.dart';
 import 'learning_page.dart';
 import 'search_page.dart';
 import 'wishlist_page.dart';
-import 'app_bars/app_bars.dart';
+import '../../widgets/app_bars/app_bars.dart';
 
 import '../../cubits/page_cubit.dart';
 
@@ -20,7 +20,6 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(56),
         child: BlocBuilder(
@@ -35,7 +34,7 @@ class MainPage extends StatelessWidget {
         builder: (context, state) {
           switch (state) {
             case 0:
-              return const HomePage();
+              return const FeaturedPage();
             case 1:
               return const SearchPage();
             case 2:
@@ -45,74 +44,86 @@ class MainPage extends StatelessWidget {
             case 4:
               return const AccountPage();
             default:
-              return const HomePage();
+              return const FeaturedPage();
           }
         },
       ),
-      bottomNavigationBar: BlocBuilder(
-        bloc: pageCubit,
-        builder: (context, state) => BottomNavigationBar(
-          selectedFontSize: 12,
-          unselectedFontSize: 12,
-          showUnselectedLabels: true,
-          currentIndex: pageCubit.state,
-          selectedItemColor: secondaryColor,
-          unselectedItemColor: unselectedCirclePageIndicator,
-          selectedLabelStyle: TextStyle(fontWeight: bold),
-          unselectedLabelStyle: TextStyle(fontWeight: bold),
-          elevation: 16,
-          type: BottomNavigationBarType.fixed,
-          onTap: (value) {
-            pageCubit.setPage(value);
-          },
-          items: const [
-            BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.star_rounded,
-              ),
-              icon: Icon(
-                Icons.star_outline_rounded,
-              ),
-              label: 'Featured',
+      bottomNavigationBar: CustomBottomNavigationBar(),
+    );
+  }
+}
+
+// ignore: camel_case_types
+class CustomBottomNavigationBar extends StatelessWidget {
+  CustomBottomNavigationBar({
+    Key? key,
+  }) : super(key: key);
+
+  final pageCubit = getIt<PageCubit>();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder(
+      bloc: pageCubit,
+      builder: (context, state) => BottomNavigationBar(
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
+        showUnselectedLabels: true,
+        currentIndex: pageCubit.state,
+        selectedLabelStyle: TextStyle(fontWeight: bold),
+        unselectedLabelStyle: TextStyle(fontWeight: bold),
+        elevation: 16,
+        type: BottomNavigationBarType.fixed,
+        onTap: (value) {
+          pageCubit.setPage(value);
+        },
+        items: const [
+          BottomNavigationBarItem(
+            activeIcon: Icon(
+              Icons.star_rounded,
             ),
-            BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.search,
-              ),
-              icon: Icon(
-                Icons.search_rounded,
-              ),
-              label: 'Search',
+            icon: Icon(
+              Icons.star_outline_rounded,
             ),
-            BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.play_circle_fill_rounded,
-              ),
-              icon: Icon(
-                Icons.play_circle_outline_rounded,
-              ),
-              label: 'My learning',
+            label: 'Featured',
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Icon(
+              Icons.search,
             ),
-            BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.favorite_rounded,
-              ),
-              icon: Icon(
-                Icons.favorite_border_rounded,
-              ),
-              label: 'Wishlist',
+            icon: Icon(
+              Icons.search_rounded,
             ),
-            BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.account_circle_rounded,
-              ),
-              icon: Icon(
-                Icons.account_circle_outlined,
-              ),
-              label: 'Account',
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Icon(
+              Icons.play_circle_fill_rounded,
             ),
-          ],
-        ),
+            icon: Icon(
+              Icons.play_circle_outline_rounded,
+            ),
+            label: 'My learning',
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Icon(
+              Icons.favorite_rounded,
+            ),
+            icon: Icon(
+              Icons.favorite_border_rounded,
+            ),
+            label: 'Wishlist',
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Icon(
+              Icons.account_circle_rounded,
+            ),
+            icon: Icon(
+              Icons.account_circle_outlined,
+            ),
+            label: 'Account',
+          ),
+        ],
       ),
     );
   }

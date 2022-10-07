@@ -4,8 +4,6 @@ import 'package:udemy_clone/presentation/cubits/lecture_selected_index_cubit.dar
 void main() {
   LectureSelectedIndexCubit cubit = LectureSelectedIndexCubit();
 
-  print("anjay");
-
   blocTest(
     'should emit [1,2] when setSelectedIndex(sectionIndex: 1, lectureIndex: 2)',
     build: () => cubit,

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:udemy_clone/core/constants/routes.dart';
+import 'package:udemy_clone/presentation/widgets/rating_stars.dart';
+import 'package:udemy_clone/share/constants/routes.dart';
 import 'package:udemy_clone/domain/entities/course.dart';
-import 'package:udemy_clone/presentation/widgets/home/best_seller_label.dart';
-import 'package:udemy_clone/presentation/widgets/home/rating_stars.dart';
 
-import '../../../core/constants/colors.dart';
-import '../../../core/constants/text_styles.dart';
+import '../../../share/constants/text_styles.dart';
+import '../../share/styles/themes.dart';
+import 'best_seller_label.dart';
 
 class FeaturedItem extends StatelessWidget {
   final Course course;
@@ -117,5 +116,3 @@ class FeaturedItem extends StatelessWidget {
     );
   }
 }
-
-

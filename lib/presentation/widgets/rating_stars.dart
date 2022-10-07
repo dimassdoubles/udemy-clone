@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import '../../../core/constants/colors.dart';
+import '../../../share/constants/colors.dart';
 
 class RatingStars extends StatelessWidget {
   final double rating;
@@ -9,7 +9,6 @@ class RatingStars extends StatelessWidget {
     Key? key,
     required this.rating,
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/core/constants/routes.dart';
-import 'package:udemy_clone/presentation/widgets/home/rating_stars.dart';
+import 'package:udemy_clone/presentation/widgets/rating_stars.dart';
+import 'package:udemy_clone/share/constants/routes.dart';
 
-import '../../../core/constants/text_styles.dart';
+import '../../../share/constants/text_styles.dart';
 import '../../../domain/entities/course.dart';
+import '../../share/styles/themes.dart';
 import 'best_seller_label.dart';
 
 class TopCoursesItem extends StatelessWidget {

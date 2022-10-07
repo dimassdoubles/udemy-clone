@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:page_view_indicators/circle_page_indicator.dart';
-import '../../core/constants/colors.dart';
-import '../../core/constants/routes.dart' as route;
-import '../../core/constants/text_styles.dart';
+import '../../share/constants/colors.dart';
+import '../../share/constants/routes.dart' as route;
+import '../../share/constants/text_styles.dart';
+import '../../share/styles/themes.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -46,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, route.homePage);
+                    Navigator.pushReplacementNamed(context, route.featuredPage);
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(

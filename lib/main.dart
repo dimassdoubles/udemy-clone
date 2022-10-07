@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'core/constants/routes.dart' as route;
+import 'package:udemy_clone/share/styles/themes.dart';
+import 'share/constants/routes.dart' as route;
 import 'injections.dart' as injections;
 
 void main() async {
@@ -13,9 +14,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: SplashPage(),
+      theme: themeData,
       onGenerateRoute: route.controller,
       initialRoute: route.splashPage,
     );

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:udemy_clone/core/constants/colors.dart';
-import 'package:udemy_clone/core/constants/text_styles.dart';
-import 'package:udemy_clone/core/dummies/sections.dart';
+import 'package:udemy_clone/share/constants/colors.dart';
+import 'package:udemy_clone/share/constants/text_styles.dart';
+import 'package:udemy_clone/share/dummies/sections.dart';
 import 'package:udemy_clone/injections.dart';
 import 'package:udemy_clone/presentation/cubits/lecture_selected_index_cubit.dart';
 import 'package:udemy_clone/presentation/cubits/lecture_selected_video_cubit.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
+import '../../share/styles/themes.dart';
 
 class PlayerPage extends StatefulWidget {
   const PlayerPage({super.key});
@@ -127,7 +129,7 @@ class _PlayerPageState extends State<PlayerPage> {
                                 child: Text(
                                   "Section ${parentIndex + 1} - ${sections[parentIndex].title}",
                                   style: sectionTitleStyle.copyWith(
-                                    fontWeight: black,
+                                    fontWeight: bold,
                                     fontSize: 12,
                                   ),
                                 ),
@@ -174,7 +176,7 @@ class _PlayerPageState extends State<PlayerPage> {
                                         fontSize: 14,
                                       ),
                                     ),
-                                    subtitle: Text('Video - 14.01 mins'),
+                                    subtitle: const Text('Video - 14.01 mins'),
                                   ),
                                 ),
                               ),

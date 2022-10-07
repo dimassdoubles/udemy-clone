@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/text_styles.dart';
-
 List<AppBar> appBars = [
   homeAppBar,
   searchAppBar,
@@ -11,14 +9,12 @@ List<AppBar> appBars = [
 ];
 
 AppBar homeAppBar = AppBar(
-  backgroundColor: Colors.white,
-  elevation: 0,
   actions: [
     TextButton(
       onPressed: () {},
-      child: Text(
+      child: const Text(
         'SIGN IN',
-        style: greyTextStyle.copyWith(fontWeight: semiBold),
+        // style: greyTextStyle.copyWith(fontWeight: semiBold),
       ),
     ),
   ],

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/colors.dart';
-import '../../../core/constants/text_styles.dart';
+import '../../../share/constants/colors.dart';
+import '../../../share/constants/text_styles.dart';
+import '../../share/styles/themes.dart';
 
 class BestSellerLabel extends StatelessWidget {
   const BestSellerLabel({
