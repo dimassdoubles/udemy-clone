@@ -3,7 +3,7 @@ import 'section.dart';
 class Course {
   final String _title, _instructor, _coverUrl, _description, _courseId;
   final int _price, _reviewsCount, _lecturesCount;
-  final List<String> _tags, _whatWillLearn;
+  final List<String> _whatWillLearn;
   final bool _isOnlyWeb;
   final double _rating;
   final List<Section> _curiculums;
@@ -32,7 +32,6 @@ class Course {
         _rating = rating,
         _reviewsCount = reviewsCount,
         _isOnlyWeb = isOnlyWeb,
-        _tags = tags,
         _curiculums = curiculums,
         _lecturesCount = lecturesCount;
 
@@ -70,10 +69,6 @@ class Course {
 
   String get coverUrl {
     return _coverUrl;
-  }
-
-  List<String> get tags {
-    return _tags;
   }
 
   bool get isOnlyWeb {
