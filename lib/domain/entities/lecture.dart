@@ -1,5 +1,5 @@
 class Lecture {
-  String _title, _videoLink;
+  final String _title, _videoLink;
   Lecture({required String title, required String videoLink})
       : _title = title,
         _videoLink = videoLink;
