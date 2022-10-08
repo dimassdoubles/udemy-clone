@@ -7,9 +7,9 @@ import '../../../share/constants/text_styles.dart';
 import '../../share/styles/themes.dart';
 import 'best_seller_label.dart';
 
-class FeaturedItem extends StatelessWidget {
+class FullCourseItem extends StatelessWidget {
   final Course course;
-  const FeaturedItem({
+  const FullCourseItem({
     Key? key,
     required this.course,
   }) : super(key: key);

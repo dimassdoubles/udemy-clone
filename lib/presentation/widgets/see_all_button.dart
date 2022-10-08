@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../share/constants/text_styles.dart';
 import '../../share/styles/themes.dart';
 
 class SeeAllButton extends StatelessWidget {
@@ -17,7 +16,7 @@ class SeeAllButton extends StatelessWidget {
           onPressed: () {},
           child: Text(
             'See all',
-            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+            style: Theme.of(context).textTheme.headline6!.copyWith(
                   fontWeight: bold,
                   color: blue,
                 ),

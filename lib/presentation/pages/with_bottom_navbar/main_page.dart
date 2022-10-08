@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../share/constants/colors.dart';
 import '../../../share/styles/themes.dart';
 import 'account_page.dart';
 import 'featured_page.dart';
@@ -8,7 +7,7 @@ import '../../../injections.dart';
 import 'learning_page.dart';
 import 'search_page.dart';
 import 'wishlist_page.dart';
-import '../../widgets/app_bars/app_bars.dart';
+import '../../widgets/app_bars.dart';
 
 import '../../cubits/page_cubit.dart';
 

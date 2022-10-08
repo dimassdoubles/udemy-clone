@@ -7,9 +7,9 @@ import '../../../domain/entities/course.dart';
 import '../../share/styles/themes.dart';
 import 'best_seller_label.dart';
 
-class TopCoursesItem extends StatelessWidget {
+class HalfCourseItem extends StatelessWidget {
   final Course course;
-  const TopCoursesItem({
+  const HalfCourseItem({
     Key? key,
     required this.course,
   }) : super(key: key);
