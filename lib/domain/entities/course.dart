@@ -1,4 +1,4 @@
-import 'package:udemy_clone/domain/entities/section.dart';
+import 'section.dart';
 
 class Course {
   final String _title, _instructor, _coverUrl, _description, _courseId;
@@ -35,10 +35,6 @@ class Course {
         _tags = tags,
         _curiculums = curiculums,
         _lecturesCount = lecturesCount;
-
-  String get courseId {
-    return _courseId;
-  }
 
   List<String> get whatWillLearn {
     return _whatWillLearn;
