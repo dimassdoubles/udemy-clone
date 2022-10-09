@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../share/routes.dart';
 
 import '../../share/styles/themes.dart';
 
@@ -13,7 +14,9 @@ class SeeAllButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 32),
       child: Center(
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, courseListPage);
+          },
           child: Text(
             'See all',
             style: Theme.of(context).textTheme.headline6!.copyWith(
