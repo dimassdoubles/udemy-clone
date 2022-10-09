@@ -1,7 +1,7 @@
 import 'section.dart';
 
 class Course {
-  final String _title, _instructor, _coverUrl, _description, _courseId;
+  final String _title, _instructor, _coverUrl, _description, _id;
   final int _price, _reviewsCount, _lecturesCount;
   final List<String> _whatWillLearn;
   final bool _isOnlyWeb;
@@ -10,7 +10,7 @@ class Course {
 
   Course({
     required String description,
-    required String courseId,
+    required String id,
     required String title,
     required String instructor,
     required String coverUrl,
@@ -25,7 +25,7 @@ class Course {
   })  : _description = description,
         _price = price,
         _whatWillLearn = whatWillLearn,
-        _courseId = courseId,
+        _id = id,
         _title = title,
         _instructor = instructor,
         _coverUrl = coverUrl,
@@ -43,8 +43,8 @@ class Course {
     return _price;
   }
 
-  String get courseId {
-    return _courseId;
+  String get id {
+    return _id;
   }
 
   String get description {

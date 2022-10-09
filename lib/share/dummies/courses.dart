@@ -6,7 +6,7 @@ List<Course> featuredCourses = [
   Course(
     description:
         "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!",
-    courseId: "YZtOPn6YEFW3hnnsbyH8",
+    id: "YZtOPn6YEFW3hnnsbyH8",
     title: "Learn Python: The Complete Python Programming Course",
     instructor: "Kelas Terbuka",
     coverUrl:
@@ -104,7 +104,7 @@ List<Course> featuredCourses = [
   Course(
     description:
         "A Complete Guide to the Flutter SDK & Flutter Framework for building native iOS and Android apps",
-    courseId: "L7fPifdNgOAqfNYKevXq",
+    id: "L7fPifdNgOAqfNYKevXq",
     title: "Flutter & Dart - The Complete Guide",
     instructor: "Khuldi Project",
     coverUrl:
@@ -147,7 +147,7 @@ List<Course> programmingCourses = [
   Course(
     description:
         "Belajar pemrograman Java dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala",
-    courseId: "DHOjvnQGgqLgmbEsHhw2",
+    id: "DHOjvnQGgqLgmbEsHhw2",
     title: "Pemrograman Java : Pemula sampai Mahir",
     instructor: "Eko Kurniawan Khannedy",
     coverUrl:
@@ -180,7 +180,7 @@ List<Course> programmingCourses = [
   Course(
     description:
         "Increase your chance of success learning to code and communicating with other developers",
-    courseId: "wdACC6rmzaiEOpqvkW1L",
+    id: "wdACC6rmzaiEOpqvkW1L",
     title: "Pre-Programming: Everything you need to know before you code",
     instructor: "Indra Gunawan",
     coverUrl:
@@ -209,7 +209,7 @@ List<Course> programmingCourses = [
   Course(
     description:
         "Learn to master Laravel to make advanced applications like the real CMS app we build on this course",
-    courseId: "5Cfxb53nogXFgfFP2Pjk",
+    id: "5Cfxb53nogXFgfFP2Pjk",
     title: "PHP with Laravel for beginners - Become a Master in Laravel",
     instructor: "Shandika Galih",
     coverUrl:
