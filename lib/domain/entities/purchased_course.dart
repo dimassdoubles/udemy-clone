@@ -2,7 +2,7 @@ class PurchasedCourse {
   final String _id, _courseId;
   // progress contain index (index section, index lecture)
   final List<List<int>> _progress;
-  final List<int> _lastPlayed;
+  List<int> _lastPlayed;
 
   PurchasedCourse({
     required String id,
@@ -13,6 +13,10 @@ class PurchasedCourse {
         _progress = progress,
         _lastPlayed = lastPlayed,
         _courseId = courseId;
+
+  void setLastPlayed({required int sectionIndex, required int lectureIndex}) {
+    _lastPlayed = [sectionIndex, lectureIndex];
+  }
 
   String get courseId {
     return _courseId;
