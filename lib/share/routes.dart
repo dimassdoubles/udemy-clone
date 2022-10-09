@@ -39,10 +39,10 @@ Route<dynamic> controller(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const ThemeTestPage(),
       );
-    case playerPage:
-      return MaterialPageRoute(
-        builder: (context) => const PlayerPage(),
-      );
+    // case playerPage:
+    //   return MaterialPageRoute(
+    //     builder: (context) => const PlayerPage(),
+    //   );
     // case courseDetailPage:
     //   return MaterialPageRoute(
     //     builder: (context) => const CourseDetailPage(),
@@ -69,7 +69,7 @@ Route<dynamic> controller(RouteSettings settings) {
       );
     case learningPage:
       return MaterialPageRoute(
-        builder: (context) => const LearningPage(),
+        builder: (context) => LearningPage(),
       );
     case wishlistPage:
       return MaterialPageRoute(
