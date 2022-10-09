@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:udemy_clone/domain/entities/course.dart';
-import 'package:udemy_clone/share/dummies/courses.dart';
+import '../../domain/entities/course.dart';
+import '../../share/dummies/courses.dart';
 import '../../share/constants/colors.dart';
 import '../../injections.dart';
 import '../cubits/lecture_selected_index_cubit.dart';

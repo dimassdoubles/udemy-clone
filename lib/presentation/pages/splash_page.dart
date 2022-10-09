@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/share/styles/themes.dart';
+import '../../share/styles/themes.dart';
 import '../../share/routes.dart' as route;
 
 class SplashPage extends StatefulWidget {

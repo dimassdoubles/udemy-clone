@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/presentation/pages/course_detail_page.dart';
+import '../pages/course_detail_page.dart';
 import 'rating_stars.dart';
 import '../../domain/entities/course.dart';
 

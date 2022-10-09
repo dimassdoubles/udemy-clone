@@ -1,16 +1,16 @@
 // routes name
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/presentation/pages/with_bottom_navbar/learning_page.dart';
-import 'package:udemy_clone/presentation/pages/with_bottom_navbar/main_page.dart';
 import 'package:udemy_clone/presentation/pages/guest_page.dart';
-import 'package:udemy_clone/presentation/pages/with_bottom_navbar/search_page.dart';
 import 'package:udemy_clone/presentation/pages/player_page.dart';
 import 'package:udemy_clone/presentation/pages/splash_page.dart';
+import 'package:udemy_clone/presentation/pages/with_bottom_navbar/learning_page.dart';
+import 'package:udemy_clone/presentation/pages/with_bottom_navbar/main_page.dart';
+import 'package:udemy_clone/presentation/pages/with_bottom_navbar/search_page.dart';
 import 'package:udemy_clone/presentation/pages/with_bottom_navbar/wishlist_page.dart';
 
 import '../presentation/pages/course_list_page.dart';
-import '../presentation/pages/with_bottom_navbar/account_page.dart';
 import '../presentation/pages/signin_page.dart';
+import '../presentation/pages/with_bottom_navbar/account_page.dart';
 import '../theme_test.dart';
 
 const String mainPage = "main";
