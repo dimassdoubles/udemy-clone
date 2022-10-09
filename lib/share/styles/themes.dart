@@ -32,6 +32,7 @@ Color lightGreen = const Color.fromARGB(255, 114, 216, 186);
 Color darkGray = const Color.fromARGB(255, 106, 111, 115);
 Color darkGreen = const Color.fromARGB(255, 25, 159, 163);
 Color purple = const Color.fromARGB(255, 164, 53, 240);
+Color nearBlack = const Color.fromARGB(255, 28, 29, 31);
 
 ThemeData themeData = ThemeData(
   // colors
