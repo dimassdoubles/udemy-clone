@@ -8,7 +8,7 @@ class PurchasedCourse {
     required String id,
     required String courseId,
     List<List<int>> progress = const [],
-    List<int> lastPlayed = const [],
+    List<int> lastPlayed = const [0, 0],
   })  : _id = id,
         _progress = progress,
         _lastPlayed = lastPlayed,
