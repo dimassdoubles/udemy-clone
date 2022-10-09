@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/share/styles/themes.dart';
+import '../../../share/routes.dart';
+import '../../../share/styles/themes.dart';
 import '../../../share/constants/text_styles.dart';
 import '../../widgets/category_list.dart';
 import '../../widgets/full_course_list.dart';
@@ -59,6 +60,7 @@ class CategoryCourseSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CategoryCourseSectionTitle(category: category),
         const SizedBox(
@@ -85,7 +87,9 @@ class CategoryCourseSectionTitle extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, courseListPage);
+        },
         child: Wrap(
           children: [
             Text(
@@ -114,30 +118,12 @@ class CategorySection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Text(
-                'Categories',
-                style: Theme.of(context).textTheme.headline5,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 16),
-              child: GestureDetector(
-                onTap: () {},
-                child: Text(
-                  'See all',
-                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                        color: blue,
-                        fontWeight: bold,
-                      ),
-                ),
-              ),
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(left: 16),
+          child: Text(
+            'Categories',
+            style: Theme.of(context).textTheme.headline5,
+          ),
         ),
         const SizedBox(
           height: 8,
