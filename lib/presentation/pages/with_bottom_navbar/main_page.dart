@@ -37,7 +37,7 @@ class MainPage extends StatelessWidget {
             case 1:
               return const SearchPage();
             case 2:
-              return const LearningPage();
+              return LearningPage();
             case 3:
               return const WishListPage();
             case 4:
