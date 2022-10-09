@@ -1,4 +1,4 @@
-import 'package:udemy_clone/domain/entities/course.dart';
+import '../entities/course.dart';
 
 class SelectCourseById {
   final List<Course> _courses;

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:udemy_clone/domain/entities/course.dart';
-import 'package:udemy_clone/domain/entities/purchased_course.dart';
-import 'package:udemy_clone/domain/usecases/select_course_by_id.dart';
-import 'package:udemy_clone/injections.dart';
-import 'package:udemy_clone/presentation/cubits/lecture_selected_index_cubit.dart';
-import 'package:udemy_clone/presentation/cubits/lecture_selected_video_cubit.dart';
-import 'package:udemy_clone/presentation/pages/player_page.dart';
-import 'package:udemy_clone/share/dummies/purchased_courses.dart';
-import 'package:udemy_clone/share/styles/themes.dart';
+import '../../../domain/entities/course.dart';
+import '../../../domain/entities/purchased_course.dart';
+import '../../../domain/usecases/select_course_by_id.dart';
+import '../../../injections.dart';
+import '../../cubits/lecture_selected_index_cubit.dart';
+import '../../cubits/lecture_selected_video_cubit.dart';
+import '../player_page.dart';
+import '../../../share/dummies/purchased_courses.dart';
+import '../../../share/styles/themes.dart';
 
 class LearningPage extends StatelessWidget {
   LearningPage({super.key});

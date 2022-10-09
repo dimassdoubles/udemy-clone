@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/share/styles/themes.dart';
+import '../../share/styles/themes.dart';
 
 List<AppBar> appBars = [
   homeAppBar,

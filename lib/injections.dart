@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
-import 'package:udemy_clone/domain/usecases/select_course_by_id.dart';
-import 'package:udemy_clone/share/dummies/courses.dart';
+import 'domain/usecases/select_course_by_id.dart';
+import 'share/dummies/courses.dart';
 import 'presentation/cubits/lecture_selected_video_cubit.dart';
 import 'presentation/cubits/lecture_selected_index_cubit.dart';
 import 'presentation/cubits/page_cubit.dart';

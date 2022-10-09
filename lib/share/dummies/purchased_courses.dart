@@ -1,4 +1,4 @@
-import 'package:udemy_clone/domain/entities/purchased_course.dart';
+import '../../domain/entities/purchased_course.dart';
 
 List<PurchasedCourse> purchasedCourses = [
   PurchasedCourse(
