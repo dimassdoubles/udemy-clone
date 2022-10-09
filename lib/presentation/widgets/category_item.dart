@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../share/routes.dart';
 
 import '../../../share/constants/colors.dart';
 import '../../../share/constants/text_styles.dart';
@@ -16,7 +17,9 @@ class CategoryItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 16),
       child: OutlinedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, courseListPage);
+        },
         style: OutlinedButton.styleFrom(
           side: BorderSide(color: secondaryColor),
           foregroundColor: secondaryColor,
