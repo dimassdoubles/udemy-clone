@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/share/styles/themes.dart';
-import 'share/constants/routes.dart' as route;
+import 'share/styles/themes.dart';
+import 'share/routes.dart' as route;
 import 'injections.dart' as injections;
 
 void main() async {
