@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import '../../share/constants/colors.dart';
-import '../../share/constants/routes.dart' as route;
+import 'package:udemy_clone/share/styles/themes.dart';
+import '../../share/routes.dart' as route;
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
     Timer(
       const Duration(seconds: 3),
-      () => Navigator.pushReplacementNamed(context, route.loginPage),
+      () => Navigator.pushReplacementNamed(context, route.guestPage),
     );
   }
 
@@ -38,7 +38,7 @@ class _SplashPageState extends State<SplashPage> {
             width: 24,
             height: 24,
             child: CircularProgressIndicator(
-              color: primaryColor,
+              color: purple,
               strokeWidth: 3,
             ),
           ),
