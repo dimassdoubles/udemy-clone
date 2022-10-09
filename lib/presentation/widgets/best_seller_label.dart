@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../share/constants/colors.dart';
-import '../../../share/constants/text_styles.dart';
 import '../../share/styles/themes.dart';
 
 class BestSellerLabel extends StatelessWidget {
@@ -22,7 +21,7 @@ class BestSellerLabel extends StatelessWidget {
         ),
         child: Text(
           'Bestseller',
-          style: loginBody.copyWith(fontWeight: bold),
+          style: TextStyle(fontWeight: bold),
         ),
       ),
     );
