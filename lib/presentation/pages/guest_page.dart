@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_view_indicators/circle_page_indicator.dart';
 import '../../share/constants/colors.dart';
-import '../../share/constants/routes.dart' as route;
-import '../../share/constants/text_styles.dart';
+import '../../share/routes.dart' as route;
 import '../../share/styles/themes.dart';
 
 class GuestPage extends StatefulWidget {
@@ -39,7 +38,7 @@ class _GuestPageState extends State<GuestPage> {
               Expanded(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: secondaryColor,
+                    backgroundColor: nearBlack,
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(0),
@@ -56,7 +55,6 @@ class _GuestPageState extends State<GuestPage> {
                     child: Text(
                       'Browse',
                       style: TextStyle(
-                        fontSize: 18,
                         fontWeight: bold,
                       ),
                     ),
@@ -67,7 +65,7 @@ class _GuestPageState extends State<GuestPage> {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: secondaryColor,
+                    backgroundColor: nearBlack,
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(0),
@@ -79,7 +77,6 @@ class _GuestPageState extends State<GuestPage> {
                     child: Text(
                       'Sign In',
                       style: TextStyle(
-                        fontSize: 18,
                         fontWeight: bold,
                       ),
                     ),
@@ -124,19 +121,19 @@ class _GuestPageState extends State<GuestPage> {
         _currentPageNotifier.value = value;
       },
       children: const [
-        LoginSubPage(
-          image: 'assets/images/login1.png',
+        GuestSubPage(
+          image: 'assets/images/guestIcon1.png',
           title: 'Take Video Courses',
           body: 'From cooking to coding and everything between',
         ),
-        LoginSubPage(
-          image: 'assets/images/login2.png',
+        GuestSubPage(
+          image: 'assets/images/guestIcon2.png',
           title: 'Learn from the Best',
           body:
               'Approachable expert-instructors, vetted by 35 million learners',
         ),
-        LoginSubPage(
-          image: 'assets/images/login3.png',
+        GuestSubPage(
+          image: 'assets/images/guestIcon3.png',
           title: 'Go at Your Own Pace',
           body: 'Lifetime access to purchased courses, anytime, anywhere',
         ),
@@ -145,12 +142,12 @@ class _GuestPageState extends State<GuestPage> {
   }
 }
 
-class LoginSubPage extends StatelessWidget {
+class GuestSubPage extends StatelessWidget {
   final String image;
   final String title;
   final String body;
 
-  const LoginSubPage({
+  const GuestSubPage({
     Key? key,
     required this.image,
     required this.title,
@@ -180,9 +177,9 @@ class LoginSubPage extends StatelessWidget {
               ),
               Text(
                 title,
-                style: loginTitle.copyWith(
+                style: textStyle1.copyWith(
                   fontSize: 24,
-                  fontWeight: semiBold,
+                  fontWeight: bold,
                 ),
               ),
               const SizedBox(
@@ -193,9 +190,6 @@ class LoginSubPage extends StatelessWidget {
                 child: Text(
                   body,
                   textAlign: TextAlign.center,
-                  style: loginBody.copyWith(
-                    fontSize: 16,
-                  ),
                 ),
               ),
             ],
