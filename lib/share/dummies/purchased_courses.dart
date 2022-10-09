@@ -5,4 +5,8 @@ List<PurchasedCourse> purchasedCourses = [
     id: "YbyyZb9gyYM65PNlJVgB",
     courseId: "YZtOPn6YEFW3hnnsbyH8",
   ),
+  PurchasedCourse(
+    id: "sPTQHy9kW4U9qR9s2KHl",
+    courseId: "DHOjvnQGgqLgmbEsHhw2",
+  ),
 ];
