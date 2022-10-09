@@ -5,14 +5,14 @@ import '../../share/constants/routes.dart' as route;
 import '../../share/constants/text_styles.dart';
 import '../../share/styles/themes.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class GuestPage extends StatefulWidget {
+  const GuestPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<GuestPage> createState() => _GuestPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _GuestPageState extends State<GuestPage> {
   final _pageController = PageController();
   final _itemLength = 3;
   final double _dotSpacing = 16;
