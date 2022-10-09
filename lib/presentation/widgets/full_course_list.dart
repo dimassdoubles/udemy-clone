@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/presentation/widgets/see_all_button.dart';
+import 'see_all_button.dart';
 
 import '../../share/dummies/courses.dart';
-import 'featured_item.dart';
+import 'full_course_item.dart';
 
 class FullCourseList extends StatelessWidget {
   const FullCourseList({
@@ -15,12 +15,7 @@ class FullCourseList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          FullCourseItem(
-            course: courses[0],
-          ),
-          FullCourseItem(
-            course: courses[1],
-          ),
+          ...featuredCourses.map((e) => FullCourseItem(course: e)).toList(),
           const SeeAllButton(),
         ],
       ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/presentation/widgets/see_all_button.dart';
+import 'see_all_button.dart';
 
 import '../../share/dummies/courses.dart';
-import 'top_courses_item.dart';
+import 'half_course_item.dart';
 
 class HalfCourseList extends StatelessWidget {
   const HalfCourseList({
@@ -15,15 +15,7 @@ class HalfCourseList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          HalfCourseItem(
-            course: courses[2],
-          ),
-          HalfCourseItem(
-            course: courses[1],
-          ),
-          HalfCourseItem(
-            course: courses[0],
-          ),
+          ...programmingCourses.map((e) => HalfCourseItem(course: e)).toList(),
           const SeeAllButton(),
         ],
       ),
