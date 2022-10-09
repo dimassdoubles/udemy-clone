@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udemy_clone/share/styles/themes.dart';
 
 List<AppBar> appBars = [
   homeAppBar,
@@ -12,9 +13,9 @@ AppBar homeAppBar = AppBar(
   actions: [
     TextButton(
       onPressed: () {},
-      child: const Text(
+      child: Text(
         'SIGN IN',
-        // style: greyTextStyle.copyWith(fontWeight: semiBold),
+        style: TextStyle(color: darkGray),
       ),
     ),
   ],
@@ -26,8 +27,16 @@ AppBar searchAppBar = AppBar(
 );
 
 AppBar learningAppBar = AppBar(
-  centerTitle: true,
-  title: const Text('Learning App Bar'),
+  actions: [
+    IconButton(
+      onPressed: () {},
+      icon: const Icon(Icons.shopping_cart_outlined),
+    )
+  ],
+  title: Text(
+    'All courses',
+    style: TextStyle(color: nearBlack, fontWeight: bold),
+  ),
 );
 
 AppBar wishlistAppBar = AppBar(
