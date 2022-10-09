@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../share/constants/colors.dart';
-import '../../../share/constants/text_styles.dart';
 import '../../share/styles/themes.dart';
 
 class UdemyBussiness extends StatelessWidget {
@@ -27,10 +26,7 @@ class UdemyBussiness extends StatelessWidget {
             Center(
               child: Text(
                 'Top companies trust Udemy',
-                style: titleCompanyText.copyWith(
-                  fontSize: 20,
-                  fontWeight: bold,
-                ),
+                style: textStyle1.copyWith(fontSize: 24, fontWeight: bold),
               ),
             ),
             Padding(
@@ -41,9 +37,7 @@ class UdemyBussiness extends StatelessWidget {
               onPressed: () {},
               child: Text(
                 'Try Udemy Bussiness',
-                style: tryUdemyBussinessText.copyWith(
-                  fontWeight: bold,
-                ),
+                style: TextStyle(color: blue, fontWeight: bold),
               ),
             ),
           ],
