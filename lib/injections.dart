@@ -1,4 +1,6 @@
 import 'package:get_it/get_it.dart';
+import 'package:udemy_clone/domain/usecases/select_course_by_id.dart';
+import 'package:udemy_clone/share/dummies/courses.dart';
 import 'presentation/cubits/lecture_selected_video_cubit.dart';
 import 'presentation/cubits/lecture_selected_index_cubit.dart';
 import 'presentation/cubits/page_cubit.dart';
@@ -13,5 +15,11 @@ Future<void> setup() async {
 
   getIt.registerSingleton<LectureSelectedIndexCubit>(
     LectureSelectedIndexCubit(),
+  );
+
+  getIt.registerLazySingleton(
+    () => SelectCourseById(
+      courses: [...featuredCourses, ...programmingCourses],
+    ),
   );
 }
