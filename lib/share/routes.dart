@@ -1,7 +1,6 @@
 // routes name
 import 'package:flutter/material.dart';
 import 'package:udemy_clone/presentation/pages/guest_page.dart';
-import 'package:udemy_clone/presentation/pages/player_page.dart';
 import 'package:udemy_clone/presentation/pages/splash_page.dart';
 import 'package:udemy_clone/presentation/pages/with_bottom_navbar/learning_page.dart';
 import 'package:udemy_clone/presentation/pages/with_bottom_navbar/main_page.dart';
