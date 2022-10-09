@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:udemy_clone/domain/entities/purchased_course.dart';
+import 'package:udemy_clone/domain/usecases/select_course_by_id.dart';
 import '../../domain/entities/course.dart';
-import '../../share/dummies/courses.dart';
 import '../../share/constants/colors.dart';
 import '../../injections.dart';
 import '../cubits/lecture_selected_index_cubit.dart';
@@ -11,7 +12,11 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../share/styles/themes.dart';
 
 class PlayerPage extends StatefulWidget {
-  const PlayerPage({super.key});
+  final PurchasedCourse _purchasedCourse;
+  const PlayerPage({
+    super.key,
+    required PurchasedCourse purchasedCourse,
+  }) : _purchasedCourse = purchasedCourse;
 
   @override
   State<PlayerPage> createState() => _PlayerPageState();
@@ -20,15 +25,17 @@ class PlayerPage extends StatefulWidget {
 class _PlayerPageState extends State<PlayerPage> {
   LectureSelectedVideoCubit videoCubit = getIt<LectureSelectedVideoCubit>();
   LectureSelectedIndexCubit indexCubit = getIt<LectureSelectedIndexCubit>();
+  final courseSelector = getIt<SelectCourseById>();
+  late Course course;
+
+  @override
+  void initState() {
+    super.initState();
+    course = courseSelector(widget._purchasedCourse.courseId);
+  }
 
   @override
   Widget build(BuildContext context) {
-    // temporary
-    videoCubit.setVideo(featuredCourses[0].curiculums[0].lectures[0].videoLink);
-    indexCubit.setSelectedIndex(sectionIndex: 0, lectureIndex: 0);
-
-    Course course = featuredCourses[0];
-
     final videoId = YoutubePlayer.convertUrlToId(videoCubit.state);
 
     YoutubePlayerController controller = YoutubePlayerController(
@@ -45,7 +52,11 @@ class _PlayerPageState extends State<PlayerPage> {
         children: [
           VideoPlayer(videoCubit: videoCubit, controller: controller),
           CourseInfo(course: course),
-          Body(indexCubit: indexCubit, videoCubit: videoCubit),
+          Body(
+              indexCubit: indexCubit,
+              videoCubit: videoCubit,
+              course: course,
+              purchasedCourse: widget._purchasedCourse),
         ],
       ),
     );
@@ -147,15 +158,20 @@ class VideoPlayer extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class Body extends StatelessWidget {
-  const Body({
+  Body({
     Key? key,
     required this.indexCubit,
     required this.videoCubit,
+    required this.course,
+    required this.purchasedCourse,
   }) : super(key: key);
 
   final LectureSelectedIndexCubit indexCubit;
   final LectureSelectedVideoCubit videoCubit;
+  PurchasedCourse purchasedCourse;
+  final Course course;
 
   @override
   Widget build(BuildContext context) {
@@ -194,14 +210,14 @@ class Body extends StatelessWidget {
               child: TabBarView(
                 children: [
                   ListView.builder(
-                    itemCount: featuredCourses[0].curiculums.length,
+                    itemCount: course.curiculums.length,
                     itemBuilder: (context, parentIndex) => Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(16),
                           child: Text(
-                            "Section ${parentIndex + 1} - ${featuredCourses[0].curiculums[parentIndex].title}",
+                            "Section ${parentIndex + 1} - ${course.curiculums[parentIndex].title}",
                             style: Theme.of(context)
                                 .textTheme
                                 .caption!
@@ -213,10 +229,8 @@ class Body extends StatelessWidget {
                           builder: (context, state) => ListView.builder(
                             shrinkWrap: true,
                             physics: const ClampingScrollPhysics(),
-                            itemCount: featuredCourses[0]
-                                .curiculums[parentIndex]
-                                .lectures
-                                .length,
+                            itemCount:
+                                course.curiculums[parentIndex].lectures.length,
                             itemBuilder: (context, childIndex) => ListTile(
                               contentPadding:
                                   const EdgeInsets.symmetric(horizontal: 16),
@@ -229,20 +243,24 @@ class Body extends StatelessWidget {
                                   ? true
                                   : false,
                               onTap: () {
-                                videoCubit.setVideo(featuredCourses[0]
-                                    .curiculums[parentIndex]
-                                    .lectures[childIndex]
-                                    .videoLink);
+                                videoCubit.setVideo(
+                                  course.curiculums[parentIndex]
+                                      .lectures[childIndex].videoLink,
+                                );
                                 indexCubit.setSelectedIndex(
-                                    sectionIndex: parentIndex,
-                                    lectureIndex: childIndex);
+                                  sectionIndex: parentIndex,
+                                  lectureIndex: childIndex,
+                                );
+
+                                purchasedCourse.setLastPlayed(
+                                  sectionIndex: parentIndex,
+                                  lectureIndex: childIndex,
+                                );
                               },
                               selectedColor: primaryColor,
                               title: Text(
-                                featuredCourses[0]
-                                    .curiculums[parentIndex]
-                                    .lectures[childIndex]
-                                    .title,
+                                course.curiculums[parentIndex]
+                                    .lectures[childIndex].title,
                                 style: TextStyle(
                                   fontWeight:
                                       (parentIndex == indexCubit.state[0] &&
