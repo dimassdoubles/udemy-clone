@@ -10,7 +10,6 @@ import 'package:udemy_clone/presentation/pages/with_bottom_navbar/wishlist_page.
 import '../presentation/pages/course_list_page.dart';
 import '../presentation/pages/signin_page.dart';
 import '../presentation/pages/with_bottom_navbar/account_page.dart';
-import '../theme_test.dart';
 
 const String mainPage = "main";
 const String splashPage = "splash";
@@ -34,10 +33,10 @@ Route<dynamic> controller(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const CourseListPage(),
       );
-    case themeTest:
-      return MaterialPageRoute(
-        builder: (context) => const ThemeTestPage(),
-      );
+    // case themeTest:
+    //   return MaterialPageRoute(
+    //     builder: (context) => const ThemeTestPage(),
+    //   );
     // case playerPage:
     //   return MaterialPageRoute(
     //     builder: (context) => const PlayerPage(),
