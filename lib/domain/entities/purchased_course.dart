@@ -1,10 +1,10 @@
-class CoursePurchased {
+class PurchasedCourse {
   final String _id, _idCourse;
   // progress contain index (index section, index lecture)
   final List<List<int>> _progress;
   final List<int> _lastPlayed;
 
-  CoursePurchased({
+  PurchasedCourse({
     required String id,
     required String idCourse,
     List<List<int>> progress = const [],
