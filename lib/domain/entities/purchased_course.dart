@@ -1,21 +1,21 @@
 class PurchasedCourse {
-  final String _id, _idCourse;
+  final String _id, _courseId;
   // progress contain index (index section, index lecture)
   final List<List<int>> _progress;
   final List<int> _lastPlayed;
 
   PurchasedCourse({
     required String id,
-    required String idCourse,
+    required String courseId,
     List<List<int>> progress = const [],
     List<int> lastPlayed = const [],
   })  : _id = id,
         _progress = progress,
         _lastPlayed = lastPlayed,
-        _idCourse = idCourse;
+        _courseId = courseId;
 
-  String get idCourse {
-    return _idCourse;
+  String get courseId {
+    return _courseId;
   }
 
   String get id {
