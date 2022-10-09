@@ -1,6 +1,5 @@
 // routes name
 import 'package:flutter/material.dart';
-import 'package:udemy_clone/presentation/pages/category_list_page.dart';
 import 'package:udemy_clone/presentation/pages/with_bottom_navbar/learning_page.dart';
 import 'package:udemy_clone/presentation/pages/with_bottom_navbar/main_page.dart';
 import 'package:udemy_clone/presentation/pages/guest_page.dart';
@@ -32,10 +31,6 @@ const String categoryListPage = "categoryListPage";
 // controll our page flow
 Route<dynamic> controller(RouteSettings settings) {
   switch (settings.name) {
-    case categoryListPage:
-      return MaterialPageRoute(
-        builder: (context) => const CategoryListPage(),
-      );
     case courseListPage:
       return MaterialPageRoute(
         builder: (context) => const CourseListPage(),
